@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXScrollPane?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="298.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <JFXTabPane prefHeight="31.0" prefWidth="600.0">
+         <tabs>
+            <Tab text="Plugin Info">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+      <JFXButton fx:id="btnClose" layoutX="567.0" layoutY="-1.0" onAction="#btnCloseAction" prefHeight="31.0" prefWidth="33.0" ripplerFill="#bc0f0f" text="X" />
+      <Label layoutX="31.0" layoutY="41.0" text="Name:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="31.0" layoutY="78.0" text="Author:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="31.0" layoutY="117.0" text="Main Class:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="31.0" layoutY="162.0" text="Description:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="30.0" layoutY="230.0" text="Version:">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="244.0" layoutY="34.0" text="Dependencies:" />
+      <Label layoutX="408.0" layoutY="34.0" text="Available Permissions:" />
+      <JFXScrollPane layoutX="244.0" layoutY="54.0" prefHeight="224.0" prefWidth="145.0">
+         <children>
+            <JFXListView fx:id="lstDepends" />
+         </children>
+      </JFXScrollPane>
+      <JFXScrollPane layoutX="408.0" layoutY="54.0" prefHeight="224.0" prefWidth="145.0">
+         <children>
+            <JFXListView fx:id="lstPerms" />
+         </children>
+      </JFXScrollPane>
+      <Label fx:id="lblName" layoutX="74.0" layoutY="42.0" text="Name" />
+      <Label fx:id="lblAuthor" layoutX="77.0" layoutY="78.0" text="Author" />
+      <Label fx:id="lblMain" layoutX="31.0" layoutY="134.0" text="com.pablo67340.shop.main.Main" />
+      <Label fx:id="lblDesc" layoutX="31.0" layoutY="179.0" prefHeight="48.0" prefWidth="198.0" text="Description" wrapText="true" />
+      <Label fx:id="lblVersion" layoutX="81.0" layoutY="231.0" text="Version" />
+      <AnchorPane onMouseDragged="#mouseDragAction" onMousePressed="#dragAction" prefHeight="31.0" prefWidth="560.0" />
+   </children>
+</AnchorPane>

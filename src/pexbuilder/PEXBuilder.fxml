@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXScrollPane?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="499.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pexbuilder.PEXBuilderController">
+   <children>
+      <JFXTabPane layoutX="-2.0" layoutY="-3.0" prefHeight="499.0" prefWidth="706.0">
+         <tabs>
+            <Tab text="Group Permissions">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <JFXScrollPane layoutX="14.0" layoutY="32.0" prefHeight="214.0" prefWidth="116.0">
+                           <children>
+                              <JFXListView fx:id="lstGroups" onMouseClicked="#lstGroupsAction" />
+                           </children>
+                        </JFXScrollPane>
+                        <Label layoutX="14.0" layoutY="13.0" text="Groups:" />
+                        <Label layoutX="180.0" layoutY="13.0" text="Active Permissions:" />
+                        <JFXScrollPane layoutX="180.0" layoutY="32.0" prefHeight="213.0" prefWidth="189.0">
+                           <children>
+                              <JFXListView fx:id="lstActive" />
+                           </children>
+                        </JFXScrollPane>
+                        <Label layoutX="457.0" layoutY="13.0" text="Available Permissions:" />
+                        <JFXScrollPane layoutX="457.0" layoutY="32.0" prefHeight="216.0" prefWidth="204.0">
+                           <children>
+                              <JFXListView fx:id="lstAvailable" />
+                           </children>
+                        </JFXScrollPane>
+                        <JFXButton fx:id="btnLeft" layoutX="403.0" layoutY="69.0" onAction="#btnLeftAction" ripplerFill="#00ff00" text="&lt;" />
+                        <JFXButton fx:id="btnRight" layoutX="403.0" layoutY="152.0" onAction="#btnRightAction" ripplerFill="RED" text="&gt;" />
+                        <JFXButton fx:id="btnOpen" layoutX="14.0" layoutY="425.0" onAction="#btnOpenAction" ripplerFill="#00daee" text="Open" />
+                        <Label layoutX="457.0" layoutY="290.0" text="Manual Permission:" />
+                        <JFXTextField fx:id="txtPerm" layoutX="457.0" layoutY="317.0" prefHeight="25.0" prefWidth="169.0" />
+                        <JFXButton fx:id="btnAddPerm" layoutX="635.0" layoutY="324.0" onAction="#btnAddPermAction" ripplerFill="#04ff00" text="Add" />
+                        <JFXButton fx:id="btnRemovePerm" layoutX="609.0" layoutY="254.0" onAction="#btnRemovePermAction" ripplerFill="RED" text="Remove" />
+                        <Label layoutX="14.0" layoutY="293.0" text="New Group:" />
+                        <JFXTextField fx:id="txtGroup" layoutX="14.0" layoutY="316.0" />
+                        <JFXButton fx:id="btnAddGroup" layoutX="154.0" layoutY="316.0" onAction="#btnAddGroupAction" ripplerFill="#00ff33" text="Add" />
+                        <JFXButton fx:id="btnRemoveGroup" layoutX="72.0" layoutY="252.0" onAction="#btnRemoveGroupAction" ripplerFill="RED" text="Remove" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Player Permissions">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab fx:id="tabPlugins" text="Plugins">
+               <content>
+                  <AnchorPane fx:id="anchPlugin" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <JFXScrollPane layoutX="14.0" layoutY="30.0" prefHeight="331.0" prefWidth="135.0">
+                           <children>
+                              <JFXListView fx:id="lstPlugins" onMouseClicked="#lstPluginAction" />
+                           </children>
+                        </JFXScrollPane>
+                        <Label layoutX="54.0" layoutY="10.0" text="Plugins" />
+                        <Label fx:id="lblDrag" layoutX="321.0" layoutY="224.0" text="Drag and Drop a plugin here!" />
+                     </children>
+                  </AnchorPane>
+               </content></Tab>
+         </tabs>
+      </JFXTabPane>
+      <JFXButton fx:id="btnClose" layoutX="666.0" onAction="#btnCloseAction" prefHeight="31.0" prefWidth="38.0" ripplerFill="#bc0f0f" text="X" />
+      <AnchorPane fx:id="anchDrag" layoutX="400.0" onMouseDragged="#mouseDragAction" onMousePressed="#dragAction" prefHeight="31.0" prefWidth="264.0" />
+   </children>
+</AnchorPane>
