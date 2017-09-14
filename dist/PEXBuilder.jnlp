@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="PEXBuilder.jnlp">
+  <information>
+    <title>PEXBuilder</title>
+    <vendor>Bryce</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="PEXBuilder.jar" size="162925" download="eager" />
+    <jar href="lib\TrayNotification-0.3.jar" size="42525" download="eager" />
+    <jar href="lib\commons-io-2.4.jar" size="185140" download="eager" />
+    <jar href="lib\commons-lang-2.6.jar" size="284220" download="eager" />
+    <jar href="lib\google-collect-1.0.jar" size="577311" download="eager" />
+    <jar href="lib\jfoenix.jar" size="2365385" download="eager" />
+    <jar href="lib\json-20160212.jar" size="49176" download="eager" />
+    <jar href="lib\json-simple-1.1.jar" size="16046" download="eager" />
+    <jar href="lib\snakeyaml-1.13.jar" size="273449" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="PEXBuilder" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="pexbuilder.PEXBuilder"  name="PEXBuilder" />
+  <update check="always"/>
+</jnlp>

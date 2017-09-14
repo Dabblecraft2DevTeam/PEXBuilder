@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="206.0" layoutY="22.0" text="MySQL Credentials">
+         <font>
+            <Font name="Calibri Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="76.0" text="Host:">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="140.0" text="Username:">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="198.0" text="Password:">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="262.0" text="Database:">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="321.0" text="Port:">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtHost" layoutX="43.0" layoutY="97.0" />
+      <JFXTextField fx:id="txtUsername" layoutX="43.0" layoutY="161.0" />
+      <JFXPasswordField fx:id="txtPassword" layoutX="43.0" layoutY="219.0" />
+      <JFXTextField fx:id="txtDatabase" layoutX="43.0" layoutY="283.0" />
+      <JFXTextField fx:id="txtPort" layoutX="43.0" layoutY="342.0" />
+      <JFXButton fx:id="btnConnect" layoutX="511.0" layoutY="356.0" onAction="#btnConnectAction" style="-fx-background-color: #ffd700;" text="Connect">
+         <font>
+            <Font name="Calibri Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXProgressBar fx:id="prgStatus" layoutY="397.0" prefHeight="3.0" prefWidth="600.0" visible="false" />
+      <Label layoutX="278.0" layoutY="101.0" text="MySQL is USE AT YOUR OWN RISK.&#10;&#10;We advise you create a seperate&#10;database to use this tool." wrapText="true">
+         <font>
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

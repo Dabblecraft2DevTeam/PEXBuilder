@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pexbuilder.LoginController">
+   <children>
+      <JFXTabPane fx:id="tabPane" layoutY="31.0" prefHeight="364.0" prefWidth="600.0">
+         <tabs>
+            <Tab text="Login">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="127.0" layoutY="98.0" text="Username:">
+                           <font>
+                              <Font name="Calibri" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="127.0" layoutY="157.0" text="Password:">
+                           <font>
+                              <Font name="Calibri" size="18.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="txtLUsername" focusColor="#00ff2b" layoutX="216.0" layoutY="97.0" prefHeight="25.0" prefWidth="165.0" />
+                        <JFXPasswordField fx:id="txtLPassword" layoutX="216.0" layoutY="156.0" onAction="#btnLoginAction" prefHeight="25.0" prefWidth="165.0" />
+                        <JFXButton fx:id="btnLogin" layoutX="327.0" layoutY="229.0" onAction="#btnLoginAction" ripplerFill="#64f0ff" style="-fx-background-color: #00BCD4;" text="Login" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="btnRegister" layoutX="400.0" layoutY="229.0" onAction="#btnRegisterAction" prefHeight="34.0" prefWidth="86.0" ripplerFill="#ffe4ca" style="-fx-background-color: #eda457;" text="Register" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <Label layoutX="127.0" layoutY="23.0" text="Login to your ShulkerBox account:">
+                           <font>
+                              <Font name="Calibri" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblGuest" layoutX="127.0" layoutY="202.0" onMouseClicked="#lblGuestAction" text="Continue as guest &gt;" textFill="#00a1ff" />
+                        <JFXCheckBox fx:id="chkStay" layoutX="324.0" layoutY="198.0" text="Stay Logged In">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXCheckBox>
+                        <Label fx:id="lblMessage" layoutX="181.0" layoutY="59.0" text="Error:" textFill="RED" visible="false" />
+                        <JFXProgressBar fx:id="prgStatus" layoutX="127.0" layoutY="244.0" prefHeight="2.0" prefWidth="183.0" visible="false" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Register">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="65.0" layoutY="51.0" text="Username:">
+                           <font>
+                              <Font name="Calibri" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="12.0" text="Register an account with ShulkerBox:">
+                           <font>
+                              <Font name="Calibri" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="64.0" layoutY="167.0" text="Password:">
+                           <font>
+                              <Font name="Calibri" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="64.0" layoutY="229.0" text="Repeat Password:">
+                           <font>
+                              <Font name="Calibri" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="65.0" layoutY="103.0" text="Email:">
+                           <font>
+                              <Font name="Calibri" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="333.0" layoutY="51.0" text="First Name:">
+                           <font>
+                              <Font name="Calibri" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="333.0" layoutY="102.0" text="Last Name:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="txtRUsername" layoutX="64.0" layoutY="68.0" prefHeight="25.0" prefWidth="178.0" />
+                        <JFXTextField fx:id="txtREmail" layoutX="64.0" layoutY="120.0" prefHeight="25.0" prefWidth="178.0" />
+                        <JFXPasswordField fx:id="txtRPassword" layoutX="65.0" layoutY="184.0" prefHeight="25.0" prefWidth="178.0" />
+                        <JFXPasswordField fx:id="txtRRepeat" layoutX="65.0" layoutY="247.0" prefHeight="25.0" prefWidth="178.0" />
+                        <JFXTextField fx:id="txtRFirstName" layoutX="335.0" layoutY="68.0" prefHeight="25.0" prefWidth="178.0" />
+                        <JFXTextField fx:id="txtRLastName" layoutX="334.0" layoutY="120.0" prefHeight="25.0" prefWidth="178.0" />
+                        <JFXButton fx:id="btnSubmit" layoutX="461.0" layoutY="259.0" onAction="#btnSubmitAction" style="-fx-background-color: #00BCD4;" text="Submit" textFill="WHITE">
+                           <font>
+                              <Font name="Calibri Bold" size="18.0" />
+                           </font>
+                        </JFXButton>
+                        <Label fx:id="lblMessage2" layoutX="333.0" layoutY="188.0" text="Label" textFill="RED" visible="false">
+                           <font>
+                              <Font name="Calibri" size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXProgressBar fx:id="prgRegister" layoutX="199.0" layoutY="306.0" visible="false" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Settings">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+         </tabs>
+      </JFXTabPane>
+      <JFXButton fx:id="btnClose" layoutX="548.0" onAction="#btnCloseAction" prefHeight="31.0" prefWidth="52.0" ripplerFill="RED" text="X" />
+      <AnchorPane fx:id="anchDrag" layoutY="-1.0" onMouseDragged="#mouseDragAction" onMousePressed="#dragAction" prefHeight="31.0" prefWidth="547.0" />
+   </children>
+</AnchorPane>

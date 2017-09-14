@@ -5,17 +5,12 @@
  */
 package pexbuilder;
 
-import java.io.File;
 import java.net.URL;
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.input.DragEvent;
-import javafx.scene.input.Dragboard;
-import javafx.scene.input.TransferMode;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -26,53 +21,42 @@ import javafx.stage.StageStyle;
 public class PEXBuilder extends Application {
     
 
-    private PEXBuilderController controller;
+    LoginController controller;
+    
+    private static PEXBuilder INSTANCE;
     
     @Override
     public void start(Stage stage) throws Exception {
-        URL location = getClass().getResource("PEXBuilder.fxml");
+        INSTANCE = this;
+        URL location = getClass().getResource("Login.fxml");
         FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(location);
         fxmlLoader.setBuilderFactory(new JavaFXBuilderFactory());
         Parent root = (Parent) fxmlLoader.load(location.openStream());
         controller = fxmlLoader.getController();
         
-        
-        
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.setResizable(false);
-        stage.setTitle("PEXBuilder 1.0");
+        stage.setTitle("PEXBuilder 1.6");
         stage.initStyle(StageStyle.UNDECORATED);
         
-        scene.setOnDragOver((DragEvent event) -> {
-            Dragboard db = event.getDragboard();
-            if (db.hasFiles()) {
-                event.acceptTransferModes(TransferMode.COPY);
-            } else {
-                event.consume();
-            }
-        });
-        
-        // Dropping over surface
-        scene.setOnDragDropped((DragEvent event) -> {
-            Dragboard db = event.getDragboard();
-            boolean success = false;
-            if (db.hasFiles()) {
-                success = true;
-                String filePath = null;
-                for (File file:db.getFiles()) {
-                    filePath = file.getAbsolutePath();
-                    controller.pluginDrop(db);
-                }
-            }
-            event.setDropCompleted(success);
-            event.consume();
-        });
         
         controller.setStage(stage);
         controller.showStage();
         
+    }
+    
+    public void openUpgrade(){
+        getHostServices().showDocument("https://shulkerbox.org/market/scripts/view/79");
+    }
+    
+    public void openURL(String input){
+        getHostServices().showDocument(input);
+    }
+    
+    public static PEXBuilder getInstance(){
+        return INSTANCE;
     }
 
     /**
